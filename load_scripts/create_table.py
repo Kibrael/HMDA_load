@@ -62,8 +62,12 @@ def create_table(spec, table_name): #spec name must include folder path
 		print "transaction successful"
 	except psycopg2.Error as e:
 		print 'error: ', e
+	cur.close()
+	conn.close()
+
 #function calls
 #create_table_2007()
-create_table('../specs/spec_2008.json', 'HMDAPUB2008')
-cur.close()
-conn.close()
+path = '../specs/'
+spec_name = 'spec_2004.json'
+table_name = 'HMDAPUB2004'
+create_table(path+spec_name, table_name)
