@@ -13,7 +13,7 @@ master_list ={'year': 4, 'rid': 10, 'agency':1, 'loan_type':1, 'loan_purpose':1,
 	'rate_spread':5, 'HOEPA':1, 'lien':1, 'sequence':7}
 
 fields = ('year', 'rid', 'agency', 'loan_type', 'loan_purpose', 'occupancy', 'amount', 'action', 'msa', 'state', 'county',
-	'tract', 'sex', 'co_sex', 'income', 'purchaser', 'denial1', 'denial2', 'denail3', 'edit_status', 'property_type', 'preapprova',
+	'tract', 'sex', 'co_sex', 'income', 'purchaser', 'denial1', 'denial2', 'denial3', 'edit_status', 'property_type', 'preapproval',
 	'ethnicity', 'co_ethnicity', 'race1', 'race2', 'race3', 'race4', 'race5', 'co_race1', 'co_race2', 'co_race3', 'co_race4', 'co_race5',
 	'rate_spread', 'hoepa', 'lien', 'sequence')
 
