@@ -1,6 +1,5 @@
 #2007 load script
 #
-
 import psycopg2
 import psycopg2.extras
 from collections import OrderedDict
@@ -20,46 +19,49 @@ def connect():
 		print "I am unable to connect to the database: ", e
 	return  conn, conn.cursor()#(cursor_factory=psycopg2.extras.DictCursor) #return a dictionary cursor object
 
+def load_rows(cur, conn, data, table):
+	count = 0
+	with open(data) as f:
+		rows = f.readlines()
+		for row in rows: #limited to 10 rows for testing
+			print "loading row: ",count
+			parsed_row =  parse_row(row, spec_2007)
+			write_row(cur, conn, tuple(parsed_row), table)
+			count +=1
 
+def parse_row(row, spec):
+	delta_parsed = []
+	parsed = []
+	for key in ordered_fields:
+		parsed.append(row[spec[key]['start']:spec[key]['stop']])
+	for item in parsed:
+		item = "'"+ item + "'"
+		delta_parsed.append(item)
+	return delta_parsed
+
+def write_row(cur, conn, row, table): #format should hold for 2004 to 2008
+	SQL = "INSERT INTO " + table + """(year, rid, agency, loan_type, loan_purpose, occupancy, amount,
+		action, msa, state, county, tract, sex, co_sex, income, purchaser, denial1, denial2, denial3, edit_status, property_type,
+		preapproval, ethnicity, co_ethnicity, race1, race2, race3, race4, race5, co_race1, co_race2, co_race3, co_race4, co_race5,
+		rate_spread, hoepa, lien, sequence) VALUES ("""
+	for value in row:
+		SQL = SQL + value +', '
+	SQL = SQL[:-2] + ');'
+	cur.execute(SQL,)
+
+#2007 field list, should hold for 2004 to 2008
 ordered_fields = ('year', 'rid', 'agency', 'loan_type', 'loan_purpose', 'occupancy', 'amount', 'action', 'msa', 'state', 'county',
 	'tract', 'sex', 'co_sex', 'income', 'purchaser', 'denial1', 'denial2', 'denial3', 'edit_status', 'property_type', 'preapproval',
 	'ethnicity', 'co_ethnicity', 'race1', 'race2', 'race3', 'race4', 'race5', 'co_race1', 'co_race2', 'co_race3', 'co_race4', 'co_race5',
 	'rate_spread', 'hoepa', 'lien', 'sequence')
-text_fields = ()
-def read_row(cur, conn, data):
-	count = 0
 
-	with open(data) as f:
-		rows = f.readlines()
-		for row in rows[:10]: #limited to 10 rows for testing
-			parsed_row =  parse_row(row, spec_2007)
-			write_row(cur, conn, tuple(parsed_row), 'hmdapub2007')
-
-def parse_row(row, spec):
-	parsed = []
-	for key in ordered_fields:
-		#print key, row[spec[key]['start']:spec[key]['stop']],
-		parsed.append(row[spec[key]['start']:spec[key]['stop']])
-		for x in range(0, len(parsed)):
-			if parsed[x] == ' ':
-				parsed[x] = 'NULL'
-	return parsed
-
-def write_row(cur, conn, row, table):
-	SQL = cur.mogrify("""INSERT INTO HMDAPUB2007  (year, rid, agency, loan_type, loan_purpose, occupancy, amount,
-		action, msa, state, county, tract, sex, co_sex, income, purchaser, denial1, denial2, denial3, edit_status, property_type,
-		preapproval, ethnicity, co_ethnicity, race1, race2, race3, race4, race5, co_race1, co_race2, co_race3, co_race4, co_race5,
-		rate_spread, hoepa, lien, sequence) VALUES """)+"%%s;" #% (row)
-	print SQL
-	cur.execute(SQL, row)
-	#cur.execute(SQL,)
-data_file = '../dat/lars.ultimate.2007.dat'
+data_file = '../dat/HMDA2007.dat'
 with open('../specs/spec_2007.json') as spec:
-	spec_2007 = json.load(spec)
+	spec_2007 = json.load(spec) #load the json file specification
 
+table = "HMDAPUB2007"
+conn, cur = connect() #connect to the locally hosted DB
+load_rows(cur, conn, data_file, table) #read the data file and insert rows
+conn.commit() #commits the transaction
 
-conn, cur = connect()
-read_row(cur, conn, data_file)
-conn.commit()
-#write_row(cur, conn, read_row(data_file), 'hmdapub2007')
 
