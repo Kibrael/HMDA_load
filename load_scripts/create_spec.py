@@ -13,11 +13,7 @@ master_list_2007 ={'year': 4, 'rid': 10, 'agency':1, 'loan_type':1, 'loan_purpos
 	'rate_spread':5, 'HOEPA':1, 'lien':1, 'sequence':7}
 
 #lists of fields from FFIEC data specifications at the national archive
-fields_2007 = ('year', 'rid', 'agency', 'loan_type', 'loan_purpose', 'occupancy', 'amount', 'action', 'msa', 'state', 'county',
-	'tract', 'sex', 'co_sex', 'income', 'purchaser', 'denial1', 'denial2', 'denial3', 'edit_status', 'property_type', 'preapproval',
-	'ethnicity', 'co_ethnicity', 'race1', 'race2', 'race3', 'race4', 'race5', 'co_race1', 'co_race2', 'co_race3', 'co_race4', 'co_race5',
-	'rate_spread', 'hoepa', 'lien', 'sequence')
-fields_2008 = ('year', 'rid', 'agency', 'loan_type', 'loan_purpose', 'occupancy', 'amount', 'action', 'msa', 'state', 'county',
+fields_04_11 = ('year', 'rid', 'agency', 'loan_type', 'loan_purpose', 'occupancy', 'amount', 'action', 'msa', 'state', 'county',
 	'tract', 'sex', 'co_sex', 'income', 'purchaser', 'denial1', 'denial2', 'denial3', 'edit_status', 'property_type', 'preapproval',
 	'ethnicity', 'co_ethnicity', 'race1', 'race2', 'race3', 'race4', 'race5', 'co_race1', 'co_race2', 'co_race3', 'co_race4', 'co_race5',
 	'rate_spread', 'hoepa', 'lien', 'sequence')
@@ -27,14 +23,7 @@ lengths_2000 = ()
 lengths_2001 = ()
 lengths_2002 = ()
 lengths_2003 = ()
-lengths_2004 = ()
-lengths_2005 = ()
-lengths_2006 = ()
-lengths_2007 = (4,10,1,1,1,1,5,1,5,2,3,7,1,1,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,1,1,7)
-lengths_2008 = (4,10,1,1,1,1,5,1,5,2,3,7,1,1,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,1,1,7)
-lengths_2009 = ()
-lengths_2010 = ()
-lengths_2011 = ()
+lengths_04_11 = (4,10,1,1,1,1,5,1,5,2,3,7,1,1,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,1,1,7)
 lengths_2012 = ()
 lengths_2013 = ()
 lengths_2014 = ()
@@ -58,8 +47,15 @@ def build_json(fields, lengths):
 
 #call functions to write specs
 #change this to a config file
-spec_2007 = build_json(fields_2007, lengths_2007)
+spec_2007 = build_json(fields_04_11, lengths_04_11)
+
+
+write_spec('../specs/spec_2004.json')
+write_spec('../specs/spec_2005.json')
+write_spec('../specs/spec_2006.json')
 write_spec('../specs/spec_2007.json')
-spec_2008 = build_json(fields_2008, lengths_2008)
 write_spec('../specs/spec_2008.json')
+write_spec('../specs/spec_2009.json')
+write_spec('../specs/spec_2010.json')
+write_spec('../specs/spec_2011.json')
 

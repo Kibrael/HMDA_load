@@ -55,13 +55,19 @@ ordered_fields = ('year', 'rid', 'agency', 'loan_type', 'loan_purpose', 'occupan
 	'ethnicity', 'co_ethnicity', 'race1', 'race2', 'race3', 'race4', 'race5', 'co_race1', 'co_race2', 'co_race3', 'co_race4', 'co_race5',
 	'rate_spread', 'hoepa', 'lien', 'sequence')
 
-data_file = '../dat/HMDA2007.dat'
-with open('../specs/spec_2007.json') as spec:
+
+#table and file variables - use config file to pull these from a json object
+table = "HMDAPUB2008"
+data_file = '../dat/HMDA2008.dat'
+spec_file = '../specs/spec_2008.json'
+
+with open(spec_file) as spec:
 	spec_2007 = json.load(spec) #load the json file specification
 
-table = "HMDAPUB2007"
+
 conn, cur = connect() #connect to the locally hosted DB
 load_rows(cur, conn, data_file, table) #read the data file and insert rows
 conn.commit() #commits the transaction
-
+cur.close()
+conn.close()
 

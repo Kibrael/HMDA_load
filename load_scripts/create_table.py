@@ -18,9 +18,6 @@ def connect():
 		print "I am unable to connect to the database: ", e
 	return conn.cursor(), conn #returns connection and cursor
 
-
-
-
 def create_table_2007():
 
 	with open('../specs/spec_2007.json') as spec: #open the json file specification as a dictionary
@@ -42,5 +39,31 @@ def create_table_2007():
 	cur.execute(create,)
 	conn.commit() #commits the transaction
 
-create_table_2007()
+def create_table(spec, table_name): #spec name must include folder path
+#this module should work for 2004-2008 LAR data
+	with open(spec) as spec:
+		file_spec = json.load(spec)
 
+	ordered_fields = ('year', 'rid', 'agency', 'loan_type', 'loan_purpose', 'occupancy', 'amount', 'action', 'msa', 'state', 'county',
+		'tract', 'sex', 'co_sex', 'income', 'purchaser', 'denial1', 'denial2', 'denial3', 'edit_status', 'property_type', 'preapproval',
+		'ethnicity', 'co_ethnicity', 'race1', 'race2', 'race3', 'race4', 'race5', 'co_race1', 'co_race2', 'co_race3', 'co_race4', 'co_race5',
+		'rate_spread', 'hoepa', 'lien', 'sequence')
+
+	table_attributes = []
+	for field in ordered_fields:
+		string = field + ' varchar(' + str(file_spec[field]['length'])+ '), '
+		table_attributes.append(string)
+
+	create = 'DROP TABLE IF EXISTS ' + table_name + '; commit; CREATE TABLE ' + table_name + '(' + ' '.join(table_attributes)[:-2] + ') '
+	cur, conn = connect() #create cursor and connection objects
+	try:
+		cur.execute(create,)
+		conn.commit() #commits the transaction
+		print "transaction successful"
+	except psycopg2.Error as e:
+		print 'error: ', e
+#function calls
+#create_table_2007()
+create_table('../specs/spec_2008.json', 'HMDAPUB2008')
+cur.close()
+conn.close()
