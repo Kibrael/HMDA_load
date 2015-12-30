@@ -59,6 +59,16 @@
         "length": 7, 
         "stop": 41
     }, 
+    "race": {
+        "start": 40, 
+        "length": 1, 
+        "stop": 41
+    }, 
+    "co_race": {
+        "start": 41, 
+        "length": 1, 
+        "stop": 42
+    }, 
     "sex": {
         "start": 41, 
         "length": 1, 
@@ -98,6 +108,11 @@
         "start": 51, 
         "length": 1, 
         "stop": 52
+    }, 
+    "sequence": {
+        "start": 73, 
+        "length": 7, 
+        "stop": 80
     }, 
     "property_type": {
         "start": 52, 
@@ -183,10 +198,5 @@
         "start": 72, 
         "length": 1, 
         "stop": 73
-    }, 
-    "sequence": {
-        "start": 73, 
-        "length": 7, 
-        "stop": 80
     }
 }
