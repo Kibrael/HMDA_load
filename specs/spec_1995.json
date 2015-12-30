@@ -1,0 +1,117 @@
+{
+    "year": {
+        "start": 0, 
+        "length": 4, 
+        "stop": 4
+    }, 
+    "rid": {
+        "start": 4, 
+        "length": 10, 
+        "stop": 14
+    }, 
+    "agency": {
+        "start": 14, 
+        "length": 1, 
+        "stop": 15
+    }, 
+    "loan_type": {
+        "start": 15, 
+        "length": 1, 
+        "stop": 16
+    }, 
+    "loan_purpose": {
+        "start": 16, 
+        "length": 1, 
+        "stop": 17
+    }, 
+    "occupancy": {
+        "start": 17, 
+        "length": 1, 
+        "stop": 18
+    }, 
+    "amount": {
+        "start": 18, 
+        "length": 5, 
+        "stop": 23
+    }, 
+    "action": {
+        "start": 23, 
+        "length": 1, 
+        "stop": 24
+    }, 
+    "msa": {
+        "start": 24, 
+        "length": 4, 
+        "stop": 28
+    }, 
+    "state": {
+        "start": 28, 
+        "length": 2, 
+        "stop": 30
+    }, 
+    "county": {
+        "start": 30, 
+        "length": 3, 
+        "stop": 33
+    }, 
+    "tract": {
+        "start": 33, 
+        "length": 7, 
+        "stop": 40
+    }, 
+    "race": {
+        "start": 40, 
+        "length": 1, 
+        "stop": 41
+    }, 
+    "co_race": {
+        "start": 41, 
+        "length": 1, 
+        "stop": 42
+    }, 
+    "sex": {
+        "start": 42, 
+        "length": 1, 
+        "stop": 43
+    }, 
+    "co_sex": {
+        "start": 43, 
+        "length": 1, 
+        "stop": 44
+    }, 
+    "income": {
+        "start": 44, 
+        "length": 4, 
+        "stop": 48
+    }, 
+    "purchaser": {
+        "start": 48, 
+        "length": 1, 
+        "stop": 49
+    }, 
+    "denial1": {
+        "start": 49, 
+        "length": 1, 
+        "stop": 50
+    }, 
+    "denial2": {
+        "start": 50, 
+        "length": 1, 
+        "stop": 51
+    }, 
+    "denial3": {
+        "start": 51, 
+        "length": 1, 
+        "stop": 52
+    }, 
+    "edit_status": {
+        "start": 52, 
+        "length": 1, 
+        "stop": 53
+    }, 
+    "sequence": {
+        "start": 53, 
+        "length": 7, 
+        "stop": 60
+    }
+}
