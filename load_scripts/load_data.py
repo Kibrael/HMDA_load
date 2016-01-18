@@ -25,9 +25,12 @@ def load_rows_04_11(cur, conn, data, table, spec, fields):
 		rows = f.readlines()
 		for row in rows:
 			print "loading row: ",count
-			parsed_row =  parse_row(row, spec)
-			write_row_04_11(cur, conn, tuple(parsed_row), table)
-			count +=1
+			parsed_row =  parse_row(row, spec, fields)
+			try:
+				write_row_04_11(cur, conn, tuple(parsed_row), table)
+				count +=1
+			except psycopg2.Error as e:
+				print "data load problem: ", e
 
 def load_rows_90_03(cur, conn, data, table, spec, fields):
 	count = 0
@@ -41,6 +44,7 @@ def load_rows_90_03(cur, conn, data, table, spec, fields):
 				count +=1
 			except psycopg2.Error as e:
 				print "data load problem: ", e
+
 def parse_row(row, spec, fields):
 	delta_parsed = []
 	parsed = []
@@ -51,10 +55,6 @@ def parse_row(row, spec, fields):
 	for item in parsed:
 		item = "'"+ item + "'"
 		delta_parsed.append(item)
-
-	#print row
-	#print parsed
-	#print delta_parsed
 	return delta_parsed
 
 def write_row_04_11(cur, conn, row, table): #format should hold for 2004 to 2008
@@ -83,23 +83,39 @@ fields_04_11 = ('year', 'rid', 'agency', 'loan_type', 'loan_purpose', 'occupancy
 	'ethnicity', 'co_ethnicity', 'race1', 'race2', 'race3', 'race4', 'race5', 'co_race1', 'co_race2', 'co_race3', 'co_race4', 'co_race5',
 	'rate_spread', 'hoepa', 'lien', 'sequence')
 
+#field list for 1990 to 2003
 fields_90_03 = ('year', 'rid', 'agency', 'loan_type', 'loan_purpose', 'occupancy', 'amount', 'action', 'msa', 'state', 'county',
 	'tract', 'race', 'co_race', 'sex', 'co_sex', 'income', 'purchaser', 'denial1', 'denial2', 'denial3', 'edit_status', 'sequence')
 
+#field list for 2012 to 2014
+fields_12_14 = ()
 
 #table and file variables - use config file to pull these from a json object
-table = "HMDAPUB1992"
-data_file = '../dat/HMDA1992.dat'
-spec_file = '../specs/spec_1991.json'
+#convert these to use the input_file.json map
+with open('config.json', 'r') as in_years:
+	years = json.load(in_years)
 
-with open(spec_file) as specification:
-	spec = json.load(specification) #load the json file specification
+with open('input_file.json', 'r') as f:
+	hmda_map = json.load(f)
 
+for year in years['load_years']:
+	table = hmda_map['hmda'+year]['table']
+	data_file = '../dat/HMDA'+year + '.dat'
+	spec_file = '../specs/spec_' + year + '.json'
 
-conn, cur = connect() #connect to the locally hosted DB
-#load_rows_04_11(cur, conn, data_file, table, spec, fields_04_11) #read the data file and insert rows for specified year (use for 2004 to 2011)
-load_rows_90_03(cur, conn, data_file, table, spec, fields_90_03) # read the data file and insert rows for the specifid year (use for 1990 to 2003)
-conn.commit() #commits the transaction
+	with open(spec_file) as specification:
+		spec = json.load(specification) #load the json file specification
+
+	conn, cur = connect() #connect to the locally hosted DB
+	if int(year) < 1990:
+		print "invalid year selection"
+	elif int(year) >= 1990 and int(year) < 2004:
+		load_rows_90_03(cur, conn, data_file, table, spec, fields_90_03) # read the data file and insert rows for the specifid year (use for 1990 to 2003)
+	elif int(year) >= 2004 and int(year) < 2012:
+		load_rows_04_11(cur, conn, data_file, table, spec, fields_04_11)
+	elif int(year) > 2011:
+		print "functions not yet available"
+	conn.commit() #commits the transaction
 cur.close()
 conn.close()
 
