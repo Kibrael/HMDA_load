@@ -1,148 +1,148 @@
 {
 	"hmda1990": {
-		"table": "HMDAPUB1990",
+		"table": "HMDAPUB1990test",
 		"data": "../dat/HMDA1990.dat",
 		"spec": "../specs/spec_1990.json"},
 
 	"hmda1991": {
-		"table": "HMDAPUB1991",
+		"table": "HMDAPUB1991test",
 		"data": "../dat/HMDA1991.dat",
 		"spec": "../specs/spec_1991.json"
 	},
 	"hmda1992": {
-		"table": "HMDAPUB1992",
+		"table": "HMDAPUB1992test",
 		"data": "../dat/HMDA1992.dat",
 		"spec": "../specs/spec_1992.json"
 	},
 
 	"hmda1993": {
-		"table": "HMDAPUB1993",
+		"table": "HMDAPUB1993test",
 		"data": "../dat/HMDA1993.dat",
 		"spec": "../specs/spec_1993.json"
 	},
 
 	"hmda1994": {
-		"table": "HMDAPUB1994",
+		"table": "HMDAPUB1994test",
 		"data": "../dat/HMDA1994.dat",
 		"spec": "../specs/spec_1994.json"
 	},
 
 	"hmda1995": {
-		"table": "HMDAPUB1995",
+		"table": "HMDAPUB1995test",
 		"data": "../dat/HMDA1995.dat",
 		"spec": "../specs/spec_1995.json"
 	},
 
 	"hmda1996": {
-		"table": "HMDAPUB1996",
+		"table": "HMDAPUB1996test",
 		"data": "../dat/HMDA1996.dat",
 		"spec": "../specs/spec_1996.json"
 	},
 
 	"hmda1997": {
-		"table": "HMDAPUB1997",
+		"table": "HMDAPUB1997test",
 		"data": "../dat/HMDA1997.dat",
 		"spec": "../specs/spec_1997.json"
 	},
 
 	"hmda1998": {
-		"table": "HMDAPUB1998",
+		"table": "HMDAPUB1998test",
 		"data": "../dat/HMDA1998.dat",
 		"spec": "../specs/spec_1998.json"
 	},
 
 	"hmda1999": {
-		"table": "HMDAPUB1999",
+		"table": "HMDAPUB1999test",
 		"data": "../dat/HMDA1999.dat",
 		"spec": "../specs/spec_1999.json"
 	},
 
 	"hmda2000": {
-		"table": "HMDAPUB2000",
+		"table": "HMDAPUB2000test",
 		"data": "../dat/HMDA2000.dat",
 		"spec": "../specs/spec_2000.json"
 	},
 
 	"hmda2001": {
-		"table": "HMDAPUB2001",
+		"table": "HMDAPUB2001test",
 		"data": "../dat/HMDA2001.dat",
 		"spec": "../specs/spec_2001.json"
 	},
 
 	"hmda2002": {
-		"table": "HMDAPUB2002",
+		"table": "HMDAPUB2002test",
 		"data": "../dat/HMDA2002.dat",
 		"spec": "../specs/spec_2002.json"
 	},
 
 	"hmda2003": {
-		"table": "HMDAPUB2003",
+		"table": "HMDAPUB2003test",
 		"data": "../dat/HMDA2003.dat",
 		"spec": "../specs/spec_2003.json"
 	},
 
 	"hmda2004": {
-		"table": "HMDAPUB2004",
+		"table": "HMDAPUB2004test",
 		"data": "../dat/HMDA2004.dat",
 		"spec": "../specs/spec_2004.json"
 	},
 
 	"hmda2005": {
-		"table": "HMDAPUB2005",
+		"table": "HMDAPUB2005test",
 		"data": "../dat/HMDA2005.dat",
 		"spec": "../specs/spec_2005.json"
 	},
 
 	"hmda2006": {
-		"table": "HMDAPUB2006",
+		"table": "HMDAPUB2006test",
 		"data": "../dat/HMDA2006.dat",
 		"spec": "../specs/spec_2006.json"
 	},
 
 	"hmda2007": {
-		"table": "HMDAPUB2007",
+		"table": "HMDAPUB2007test",
 		"data": "../dat/HMDA2007.dat",
 		"spec": "../specs/spec_2007.json"
 	},
 
 	"hmda2008": {
-		"table": "HMDAPUB2008",
+		"table": "HMDAPUB2008test",
 		"data": "../dat/HMDA2008.dat",
 		"spec": "../specs/spec_2008.json"
 	},
 
 	"hmda2009": {
-		"table": "HMDAPUB2009",
+		"table": "HMDAPUB2009test",
 		"data": "../dat/HMDA2009.dat",
 		"spec": "../specs/spec_2009.json"
 	},
 
 	"hmda2010": {
-		"table": "HMDAPUB2010",
+		"table": "HMDAPUB2010test",
 		"data": "../dat/HMDA2010.dat",
 		"spec": "../specs/spec_2010.json"
 	},
 
 	"hmda2011": {
-		"table": "HMDAPUB2011",
+		"table": "HMDAPUB2011test",
 		"data": "../dat/HMDA2011.dat",
 		"spec": "../specs/spec_2011.json"
 	},
 
 	"hmda2012": {
-		"table": "HMDAPUB2012",
-		"data": "../dat/HMDA2012.dat",
+		"table": "HMDAPUB2012test",
+		"data": "../dat/HMDA2012.csv",
 		"spec": "../specs/spec_20012.json"
 	},
 
 	"hmda2013": {
-		"table": "HMDAPUB2013",
-		"data": "../dat/HMDA2013.dat",
+		"table": "HMDAPUB2013test",
+		"data": "../dat/HMDA2013.csv",
 		"spec": "../specs/spec_2013.json"
 	},
 
 	"hmda2014": {
-		"table": "HMDAPUB2014",
+		"table": "HMDAPUB2014test",
 		"data": "../dat/HMDA2014.dat",
 		"spec": "../specs/spec_20014.json"
 	}

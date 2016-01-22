@@ -16,12 +16,15 @@ fields_04_11 = ('year', 'rid', 'agency', 'loan_type', 'loan_purpose', 'occupancy
 	'ethnicity', 'co_ethnicity', 'race1', 'race2', 'race3', 'race4', 'race5', 'co_race1', 'co_race2', 'co_race3', 'co_race4', 'co_race5',
 	'rate_spread', 'hoepa', 'lien', 'sequence')
 
+fields_12_14 = ('year', 'rid', 'agency', 'loan_type', 'property_type', 'loan_purpose', 'occupancy', 'preapproval', 'amount', 'action', 'msa', 'state', 'county',
+	'tract', 'ethnicity', 'co_ethnicity', 'race1', 'race2', 'race3', 'race4', 'race5', 'co_race1', 'co_race2', 'co_race3', 'co_race4', 'co_race5',
+	'sex', 'co_sex', 'income', 'purchaser', 'denial1', 'denial2', 'denial3', 'rate_spread', 'hoepa', 'lien', 'edit_status', 'sequence', 'population',
+	'min_population_pct', 'median_income', 'tract_to_msa_income_pct', 'num_owner_occ_units', 'num_single_fam_units', 'app_date_ind')
+
 #lengths of fields from FFIEC data specifications national archive
 lengths_90_03 = (4,10,1,1,1,1,5,1,4,2,3,7,1,1,1,1,4,1,1,1,1,1,7)
 lengths_04_11 = (4,10,1,1,1,1,5,1,5,2,3,7,1,1,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,1,1,7)
-lengths_2012 = ()
-lengths_2013 = ()
-lengths_2014 = ()
+lengths_12_14 = (4,10,1,1,1,1,1,5,1,1,5,2,3,7,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,1,1,1,1,5,1,1,1,7,8,6,8,6,8,8,1)
 
 #write the file spec to a json file that includes field name, length, and start/stop positions
 def write_spec(name, data):
@@ -68,3 +71,6 @@ write_spec('../specs/spec_2010.json', build_json(fields_04_11, lengths_04_11))
 write_spec('../specs/spec_2011.json', build_json(fields_04_11, lengths_04_11))
 
 #write file specs for 2011 to 2014
+write_spec('../specs/spec_2012.json', build_json(fields_12_14, lengths_12_14))
+write_spec('../specs/spec_2013.json', build_json(fields_12_14, lengths_12_14))
+write_spec('../specs/spec_2014.json', build_json(fields_12_14, lengths_12_14))
