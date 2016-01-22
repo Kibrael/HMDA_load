@@ -30,7 +30,6 @@ def create_table(spec, table_name, fields): #spec name must include folder path
 
 	create = 'DROP TABLE IF EXISTS ' + table_name + '; commit; CREATE TABLE ' + table_name + '(' + ' '.join(table_attributes)[:-2] + ') '
 	cur, conn = connect() #create cursor and connection objects
-
 	try:
 		cur.execute(create,)
 		conn.commit() #commits the transaction
@@ -39,7 +38,6 @@ def create_table(spec, table_name, fields): #spec name must include folder path
 		print 'error: ', e
 	cur.close()
 	conn.close()
-
 
 ordered_fields_90_03 =  ('year', 'rid', 'agency', 'loan_type', 'loan_purpose', 'occupancy', 'amount', 'action', 'msa', 'state', 'county',
 	'tract', 'race', 'co_race', 'sex', 'co_sex', 'income', 'purchaser', 'denial1', 'denial2', 'denial3', 'edit_status', 'sequence')
@@ -54,6 +52,7 @@ ordered_fields_12_14 =  ('year', 'rid', 'agency', 'loan_type', 'property_type', 
 	'sex', 'co_sex', 'income', 'purchaser', 'denial1', 'denial2', 'denial3', 'rate_spread', 'hoepa', 'lien', 'edit_status', 'sequence', 'population',
 	'min_population_pct', 'median_income', 'tract_to_msa_income_pct', 'num_owner_occ_units', 'num_single_fam_units', 'app_date_ind')
 
+#ordered_fields_12_14 = ordered_fields_04_11
 with open('config.json', 'r') as years_file:
 	years = json.load(years_file)
 
@@ -73,19 +72,22 @@ for year in years['load_years']:
 	else:
 		print "Invalid year selected"
 
+with open('input_file.json', 'r') as f:
+	inputs = json.load(f)
+
 for year in years_90_03:
 	spec_name = path + 'spec_' + year + '.json'
-	table_name = 'HMDAPub' + year + 'test'
+	table_name = inputs['hmda' + year]['table']
 	create_table(spec_name, table_name, ordered_fields_90_03) #remove comment to run
 
 for year in years_04_11:
 	spec_name = path + 'spec_' + year+ '.json'
-	table_name = 'HMDAPub'+year + 'test'
+	table_name = inputs['hmda' + year]['table']
 	create_table(spec_name, table_name, ordered_fields_04_11) #remove comment to run
 
 for year in years_12_14:
 	spec_name = path + 'spec_' + year + '.json'
-	table_name = 'HMDAPub' + year + 'test'
+	table_name =  inputs['hmda' + year]['table']
 	create_table(spec_name, table_name, ordered_fields_12_14) #remove comment to run
 
 
