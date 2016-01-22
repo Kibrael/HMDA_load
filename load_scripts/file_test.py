@@ -1,3 +1,5 @@
+#creates a test file using the data range that threw errors on load
+
 with open('../dat/hmda1991.dat') as infile:
 	lines = infile.readlines()
 
