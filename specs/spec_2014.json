@@ -1,0 +1,284 @@
+{
+    "year": {
+        "start": 0, 
+        "length": 4, 
+        "stop": 4, 
+        "parse_position": 0
+    }, 
+    "rid": {
+        "start": 4, 
+        "length": 10, 
+        "stop": 14, 
+        "parse_position": 1
+    }, 
+    "agency": {
+        "start": 14, 
+        "length": 1, 
+        "stop": 15, 
+        "parse_position": 2
+    }, 
+    "loan_type": {
+        "start": 15, 
+        "length": 1, 
+        "stop": 16, 
+        "parse_position": 3
+    }, 
+    "loan_purpose": {
+        "start": 17, 
+        "length": 1, 
+        "stop": 18, 
+        "parse_position": 5
+    }, 
+    "occupancy": {
+        "start": 18, 
+        "length": 1, 
+        "stop": 19, 
+        "parse_position": 6
+    }, 
+    "amount": {
+        "start": 24, 
+        "length": 1, 
+        "stop": 25, 
+        "parse_position": 8
+    }, 
+    "action": {
+        "start": 25, 
+        "length": 1, 
+        "stop": 26, 
+        "parse_position": 9
+    }, 
+    "msa": {
+        "start": 26, 
+        "length": 5, 
+        "stop": 31, 
+        "parse_position": 10
+    }, 
+    "state": {
+        "start": 31, 
+        "length": 2, 
+        "stop": 33, 
+        "parse_position": 11
+    }, 
+    "county": {
+        "start": 33, 
+        "length": 3, 
+        "stop": 36, 
+        "parse_position": 12
+    }, 
+    "tract": {
+        "start": 36, 
+        "length": 7, 
+        "stop": 43, 
+        "parse_position": 13
+    }, 
+    "race": {
+        "start": 40, 
+        "length": 1, 
+        "stop": 41, 
+        "parse_position": 12
+    }, 
+    "co_race": {
+        "start": 41, 
+        "length": 1, 
+        "stop": 42, 
+        "parse_position": 13
+    }, 
+    "sex": {
+        "start": 55, 
+        "length": 1, 
+        "stop": 56, 
+        "parse_position": 26
+    }, 
+    "co_sex": {
+        "start": 56, 
+        "length": 1, 
+        "stop": 57, 
+        "parse_position": 27
+    }, 
+    "income": {
+        "start": 57, 
+        "length": 4, 
+        "stop": 61, 
+        "parse_position": 28
+    }, 
+    "purchaser": {
+        "start": 61, 
+        "length": 1, 
+        "stop": 62, 
+        "parse_position": 29
+    }, 
+    "denial1": {
+        "start": 62, 
+        "length": 1, 
+        "stop": 63, 
+        "parse_position": 30
+    }, 
+    "denial2": {
+        "start": 63, 
+        "length": 1, 
+        "stop": 64, 
+        "parse_position": 31
+    }, 
+    "denial3": {
+        "start": 64, 
+        "length": 1, 
+        "stop": 65, 
+        "parse_position": 32
+    }, 
+    "edit_status": {
+        "start": 72, 
+        "length": 1, 
+        "stop": 73, 
+        "parse_position": 36
+    }, 
+    "sequence": {
+        "start": 73, 
+        "length": 7, 
+        "stop": 80, 
+        "parse_position": 37
+    }, 
+    "property_type": {
+        "start": 16, 
+        "length": 1, 
+        "stop": 17, 
+        "parse_position": 4
+    }, 
+    "preapproval": {
+        "start": 19, 
+        "length": 5, 
+        "stop": 24, 
+        "parse_position": 7
+    }, 
+    "ethnicity": {
+        "start": 43, 
+        "length": 1, 
+        "stop": 44, 
+        "parse_position": 14
+    }, 
+    "co_ethnicity": {
+        "start": 44, 
+        "length": 1, 
+        "stop": 45, 
+        "parse_position": 15
+    }, 
+    "race1": {
+        "start": 45, 
+        "length": 1, 
+        "stop": 46, 
+        "parse_position": 16
+    }, 
+    "race2": {
+        "start": 46, 
+        "length": 1, 
+        "stop": 47, 
+        "parse_position": 17
+    }, 
+    "race3": {
+        "start": 47, 
+        "length": 1, 
+        "stop": 48, 
+        "parse_position": 18
+    }, 
+    "race4": {
+        "start": 48, 
+        "length": 1, 
+        "stop": 49, 
+        "parse_position": 19
+    }, 
+    "race5": {
+        "start": 49, 
+        "length": 1, 
+        "stop": 50, 
+        "parse_position": 20
+    }, 
+    "co_race1": {
+        "start": 50, 
+        "length": 1, 
+        "stop": 51, 
+        "parse_position": 21
+    }, 
+    "co_race2": {
+        "start": 51, 
+        "length": 1, 
+        "stop": 52, 
+        "parse_position": 22
+    }, 
+    "co_race3": {
+        "start": 52, 
+        "length": 1, 
+        "stop": 53, 
+        "parse_position": 23
+    }, 
+    "co_race4": {
+        "start": 53, 
+        "length": 1, 
+        "stop": 54, 
+        "parse_position": 24
+    }, 
+    "co_race5": {
+        "start": 54, 
+        "length": 1, 
+        "stop": 55, 
+        "parse_position": 25
+    }, 
+    "rate_spread": {
+        "start": 65, 
+        "length": 5, 
+        "stop": 70, 
+        "parse_position": 33
+    }, 
+    "hoepa": {
+        "start": 70, 
+        "length": 1, 
+        "stop": 71, 
+        "parse_position": 34
+    }, 
+    "lien": {
+        "start": 71, 
+        "length": 1, 
+        "stop": 72, 
+        "parse_position": 35
+    }, 
+    "population": {
+        "start": 80, 
+        "length": 8, 
+        "stop": 88, 
+        "parse_position": 38
+    }, 
+    "min_population_pct": {
+        "start": 88, 
+        "length": 6, 
+        "stop": 94, 
+        "parse_position": 39
+    }, 
+    "median_income": {
+        "start": 94, 
+        "length": 8, 
+        "stop": 102, 
+        "parse_position": 40
+    }, 
+    "tract_to_msa_income_pct": {
+        "start": 102, 
+        "length": 6, 
+        "stop": 108, 
+        "parse_position": 41
+    }, 
+    "num_owner_occ_units": {
+        "start": 108, 
+        "length": 8, 
+        "stop": 116, 
+        "parse_position": 42
+    }, 
+    "num_single_fam_units": {
+        "start": 116, 
+        "length": 8, 
+        "stop": 124, 
+        "parse_position": 43
+    }, 
+    "app_date_ind": {
+        "start": 124, 
+        "length": 1, 
+        "stop": 125, 
+        "parse_position": 44
+    }
+}

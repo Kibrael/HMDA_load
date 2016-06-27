@@ -8,7 +8,11 @@ fields_04_11 = ('year', 'rid', 'agency', 'loan_type', 'loan_purpose', 'occupancy
     'tract', 'sex', 'co_sex', 'income', 'purchaser', 'denial1', 'denial2', 'denial3', 'edit_status', 'property_type', 'preapproval',
     'ethnicity', 'co_ethnicity', 'race1', 'race2', 'race3', 'race4', 'race5', 'co_race1', 'co_race2', 'co_race3', 'co_race4', 'co_race5',
     'rate_spread', 'hoepa', 'lien', 'sequence')
-
+{
+    "load_years": ["1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999",
+            "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009",
+            "2010", "2010", "2011", "2012", "2013", "2014"]
+}
 derp = ['As of Year',
 'Respondent ID',
 'Agency Code',
@@ -56,3 +60,5 @@ derp = ['As of Year',
 'Application Date Indicator']
 
 print len(derp)
+
+

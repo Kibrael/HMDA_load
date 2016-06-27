@@ -30,7 +30,7 @@ def load_rows(cur,conn, data, table, spec, fields):
 		rows = csv.reader(open(data))
 
 	for row in rows:
-		print "loading row: ",count
+		print "loading row: ",count, year
 		parsed_row =  parse_row(row, year, spec, fields)
 		try:
 			if int(year) < 1990:
@@ -44,11 +44,13 @@ def load_rows(cur,conn, data, table, spec, fields):
 			else:
 				print "invalid selection", year
 			count +=1
-			if count > 10: #remove this section when done testing
-				break
+			#if count > 100: #remove this section when done testing
+			#	break
 		except psycopg2.Error as e:
 			print "data load problem: ", e
 			sys.exit(0)
+	conn.commit() #commits the transaction
+	print "transaction commited"
 
 def parse_row(row, year, spec, fields):
 	delta_parsed = []
@@ -86,7 +88,6 @@ def write_row_04_11(cur, conn, row, table): #format should hold for 2004 to 2011
 	for value in row:
 		SQL = SQL + value +', '
 	SQL = SQL[:-2] + ');'
-
 	cur.execute(SQL,)
 
 def write_row_12_14(cur, conn, row, table): #format for 2012 through 2017
@@ -147,7 +148,6 @@ for year in years['load_years']:
 		print "invalid selection", year
 
 	conn, cur = connect() #connect to the locally hosted DB
-	conn.commit() #commits the transaction
 	load_rows(cur,conn, data_file, table, spec, fields)
 
 cur.close()

@@ -2,116 +2,139 @@
     "year": {
         "start": 0, 
         "length": 4, 
-        "stop": 4
+        "stop": 4, 
+        "parse_position": 0
     }, 
     "rid": {
         "start": 4, 
         "length": 10, 
-        "stop": 14
+        "stop": 14, 
+        "parse_position": 1
     }, 
     "agency": {
         "start": 14, 
         "length": 1, 
-        "stop": 15
+        "stop": 15, 
+        "parse_position": 2
     }, 
     "loan_type": {
         "start": 15, 
         "length": 1, 
-        "stop": 16
+        "stop": 16, 
+        "parse_position": 3
     }, 
     "loan_purpose": {
         "start": 16, 
         "length": 1, 
-        "stop": 17
+        "stop": 17, 
+        "parse_position": 4
     }, 
     "occupancy": {
         "start": 17, 
         "length": 1, 
-        "stop": 18
+        "stop": 18, 
+        "parse_position": 5
     }, 
     "amount": {
         "start": 18, 
         "length": 5, 
-        "stop": 23
+        "stop": 23, 
+        "parse_position": 6
     }, 
     "action": {
         "start": 23, 
         "length": 1, 
-        "stop": 24
+        "stop": 24, 
+        "parse_position": 7
     }, 
     "msa": {
         "start": 24, 
         "length": 4, 
-        "stop": 28
+        "stop": 28, 
+        "parse_position": 8
     }, 
     "state": {
         "start": 28, 
         "length": 2, 
-        "stop": 30
+        "stop": 30, 
+        "parse_position": 9
     }, 
     "county": {
         "start": 30, 
         "length": 3, 
-        "stop": 33
+        "stop": 33, 
+        "parse_position": 10
     }, 
     "tract": {
         "start": 33, 
         "length": 7, 
-        "stop": 40
+        "stop": 40, 
+        "parse_position": 11
     }, 
     "race": {
         "start": 40, 
         "length": 1, 
-        "stop": 41
+        "stop": 41, 
+        "parse_position": 12
     }, 
     "co_race": {
         "start": 41, 
         "length": 1, 
-        "stop": 42
+        "stop": 42, 
+        "parse_position": 13
     }, 
     "sex": {
         "start": 42, 
         "length": 1, 
-        "stop": 43
+        "stop": 43, 
+        "parse_position": 14
     }, 
     "co_sex": {
         "start": 43, 
         "length": 1, 
-        "stop": 44
+        "stop": 44, 
+        "parse_position": 15
     }, 
     "income": {
         "start": 44, 
         "length": 4, 
-        "stop": 48
+        "stop": 48, 
+        "parse_position": 16
     }, 
     "purchaser": {
         "start": 48, 
         "length": 1, 
-        "stop": 49
+        "stop": 49, 
+        "parse_position": 17
     }, 
     "denial1": {
         "start": 49, 
         "length": 1, 
-        "stop": 50
+        "stop": 50, 
+        "parse_position": 18
     }, 
     "denial2": {
         "start": 50, 
         "length": 1, 
-        "stop": 51
+        "stop": 51, 
+        "parse_position": 19
     }, 
     "denial3": {
         "start": 51, 
         "length": 1, 
-        "stop": 52
+        "stop": 52, 
+        "parse_position": 20
     }, 
     "edit_status": {
         "start": 52, 
         "length": 1, 
-        "stop": 53
+        "stop": 53, 
+        "parse_position": 21
     }, 
     "sequence": {
         "start": 53, 
         "length": 7, 
-        "stop": 60
+        "stop": 60, 
+        "parse_position": 22
     }
 }
