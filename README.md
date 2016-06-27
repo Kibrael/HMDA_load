@@ -1,9 +1,6 @@
 # HMDA_load
 Contains file specifications and load scripts for HMDA data. The scripts will load HMDA LAR data from 1990 to 2014 into a local PostgreSQL instance.
 
-Specifications will be converted from FFIEC/FRB PDF to JSON format using [create_spec.py](https://github.com/Kibrael/HMDA_load/blob/master/load_scripts/create_spec.py)
-JSON specification files are located [here](https://github.com/Kibrael/HMDA_load/tree/master/specs)
-
 #### Order of Operations:
 
 1) in the [config.json](https://github.com/Kibrael/HMDA_load/blob/master/load_scripts/config.json) file, specify which years of HMDA data are to be loaded. Years are to be in string format.
