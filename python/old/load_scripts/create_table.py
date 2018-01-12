@@ -47,7 +47,7 @@ ordered_fields_04_11 = ('year', 'rid', 'agency', 'loan_type', 'loan_purpose', 'o
 		'ethnicity', 'co_ethnicity', 'race1', 'race2', 'race3', 'race4', 'race5', 'co_race1', 'co_race2', 'co_race3', 'co_race4', 'co_race5',
 		'rate_spread', 'hoepa', 'lien', 'sequence')
 
-ordered_fields_12_14 =  ('year', 'rid', 'agency', 'loan_type', 'property_type', 'loan_purpose', 'occupancy', 'preapproval', 'amount', 'action', 'msa', 'state', 'county',
+ordered_fields_12_16 =  ('year', 'rid', 'agency', 'loan_type', 'property_type', 'loan_purpose', 'occupancy', 'preapproval', 'amount', 'action', 'msa', 'state', 'county',
 	'tract', 'ethnicity', 'co_ethnicity', 'race1', 'race2', 'race3', 'race4', 'race5', 'co_race1', 'co_race2', 'co_race3', 'co_race4', 'co_race5',
 	'sex', 'co_sex', 'income', 'purchaser', 'denial1', 'denial2', 'denial3', 'rate_spread', 'hoepa', 'lien', 'edit_status', 'sequence', 'population',
 	'min_population_pct', 'median_income', 'tract_to_msa_income_pct', 'num_owner_occ_units', 'num_single_fam_units', 'app_date_ind')
@@ -58,7 +58,7 @@ with open('config.json', 'r') as years_file:
 
 years_90_03 = []
 years_04_11 = []
-years_12_14 = []
+years_12_16 = []
 path = '../specs/' #relative folder path to json file specs for parsing
 
 #build list of years for creating tables
@@ -67,8 +67,8 @@ for year in years['load_years']:
 		years_90_03.append(year)
 	elif int(year) >= 2004 and int(year) <= 2011:
 		years_04_11.append(year)
-	elif int(year) >= 2012 and int(year) <= 2014:
-		years_12_14.append(year)
+	elif int(year) >= 2012 and int(year) <= 2016:
+		years_12_16.append(year)
 	else:
 		print "Invalid year selected"
 
@@ -85,9 +85,9 @@ for year in years_04_11:
 	table_name = inputs['hmda' + year]['table']
 	create_table(spec_name, table_name, ordered_fields_04_11) #remove comment to run
 
-for year in years_12_14:
+for year in years_12_16:
 	spec_name = path + 'spec_' + year + '.json'
 	table_name =  inputs['hmda' + year]['table']
-	create_table(spec_name, table_name, ordered_fields_12_14) #remove comment to run
+	create_table(spec_name, table_name, ordered_fields_12_16) #remove comment to run
 
 
