@@ -22,11 +22,11 @@ WITH (
 ALTER TABLE {table}
   OWNER TO roellk; COMMIT;
 
-  CREATE TEMPORARY TABLE ts_load
-  (TS varchar); -- TS contains an entire TS record per row
+  CREATE TEMPORARY TABLE ts_load 
+  (TS varchar) ; -- TS contains an entire TS record per row
 
-  COPY ts_load
-    FROM '{data_file}';
+  COPY ts_load 
+    FROM '{data_file}' ENCODING 'latin1';
     COMMIT;
 
 INSERT INTO {table} (
