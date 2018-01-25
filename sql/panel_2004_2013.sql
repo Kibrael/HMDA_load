@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS {table};
 CREATE TABLE {table} (
 	resp_id varchar,
 	msa varchar,
-	agency_code varchar,
+	agency varchar,
 	agency_group_code varchar,
 	resp_name varchar,
 	resp_city varchar,
@@ -22,7 +22,7 @@ WITH (
   OIDS=TRUE
 );
 ALTER TABLE {table}
-  OWNER TO roellk; COMMIT;
+  OWNER TO postgres; COMMIT;
 
   CREATE TEMPORARY TABLE panel_load
   (PANEL varchar); -- LAR contains an entire LAR record
@@ -34,7 +34,7 @@ ALTER TABLE {table}
 INSERT INTO {table} (
 resp_id,
 msa,
-agency_code,
+agency,
 agency_group_code,
 resp_name,
 resp_city,

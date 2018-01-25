@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS public.{table};
 CREATE TABLE public.{table} (
 as_of_date varchar,
 resp_id varchar,
-agency_code varchar,
+agency varchar,
 id_tax varchar,
 resp_name varchar,
 resp_address varchar,
@@ -28,7 +28,7 @@ WITH (
   OIDS=TRUE
 );
 ALTER TABLE {table}
-  OWNER TO roellk; COMMIT;
+  OWNER TO postgres; COMMIT;
 
 COPY public.{table}
     from '{data_file}'
