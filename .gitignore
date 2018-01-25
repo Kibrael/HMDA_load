@@ -2,3 +2,6 @@
 
 dat/
 python/.ipynb_checkpoints/.
+python/.ipynb_checkpoints/load_hmda_data-checkpoint.ipynb
+python/.ipynb_checkpoints/created_indexes-checkpoint.ipynb
+python/.ipynb_checkpoints/validate_data-checkpoint.ipynb
