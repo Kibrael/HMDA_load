@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS {table};
 CREATE TABLE {table} (
 as_of_date varchar,
-agency_code varchar,
+agency varchar,
 resp_id varchar,
 resp_name varchar,
 resp_address varchar,
@@ -20,7 +20,7 @@ WITH (
   OIDS=TRUE
 );
 ALTER TABLE {table}
-  OWNER TO roellk; COMMIT;
+  OWNER TO postgres; COMMIT;
 
   CREATE TEMPORARY TABLE ts_load 
   (TS varchar) ; -- TS contains an entire TS record per row
@@ -31,7 +31,7 @@ ALTER TABLE {table}
 
 INSERT INTO {table} (
 as_of_date,
-agency_code,
+agency,
 resp_id,
 resp_name,
 resp_address,
