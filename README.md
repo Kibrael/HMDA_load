@@ -44,7 +44,7 @@ Panel naming:
 - NARA: panel_ult_{year}.dat
 
 ### Data Cleaning
-The 2016 Transmittal Sheet file has an extra tab on line 2074. This tab can be removed by loading the data in Excel, finding the empty cell on line 2074 and deleting it and left shifting the remaining data on that row.
+The 2016 Transmittal Sheet file has an extra tab on line 2674. This tab can be removed by loading the data in Excel, finding the empty cell on line 2074 and deleting it and left shifting the remaining data on that row.
 
 ### Loading Data
 - Set up the directory structure for your data such that LAR, TS, and Panel data are placed in sub-folders. For example base_path/lar/ will contain all LAR data files. The Python code variable "base_path" can then be set to this path.
